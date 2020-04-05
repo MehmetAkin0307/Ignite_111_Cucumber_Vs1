@@ -179,6 +179,8 @@ public class BrowserUtils {
         }
     }
 
+
+
     /**
      * Waits for element to be not stale
      * @param element

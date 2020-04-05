@@ -13,14 +13,18 @@ import org.junit.runner.RunWith;
                 "json:test-output/cucumber.json",
                 "rerun:test-output/rerun.txt"
         },
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/",
         glue = "com/ignite/step_defs",
-        tags = "@eif",
+        tags = "@asa8",
 
         dryRun = false
+
+
 )
 
 
 public class CukesRunner {
 
 }
+
+

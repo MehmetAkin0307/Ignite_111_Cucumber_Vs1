@@ -14,6 +14,9 @@ public class Introduction_Pg {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "//a[@id='example-advanced-form-t-0']/span[2]")
+    public WebElement introductionButton;
+
     @FindBy( id= "acceptTerms")
     public WebElement acceptButton;
 
@@ -24,10 +27,10 @@ public class Introduction_Pg {
     public WebElement previous_Btn;
 
 
-    public void clickAccept() {
+  /*  public void clickAccept() {
         BrowserUtils.waitForClickablility(acceptButton, 10);
         acceptButton.click();
-    }
+    }*/
 
     public void byPassIntroPage (){
         Driver.getDriver().get(ConfigReader.getKey("noIntro"));

@@ -44,8 +44,12 @@ public class Schools_Pg {
     public WebElement previous_Btn;
 
 
-    public WebElement selectSchool(int nth){
-        return Driver.getDriver().findElement(By.id("school_1_"+(nth+1)));
+    @FindBy(xpath = "//div[@id='schools-wrap']//section//div//table//tbody//tr[6]//td[2]//label")
+    public WebElement ignite111seleck;
+
+
+    public WebElement selectSchool(int nth) {
+        return Driver.getDriver().findElement(By.id("school_1_" + (nth + 1)));
     }
 
 
@@ -69,5 +73,20 @@ public class Schools_Pg {
     public void selectSchool(String s) {
         schoolName(s).click();
         next_Btn.click();
+
     }
-}
+
+  /*  public void schoolChoese() {
+
+        String arr[] = {"Ignite 111", "Ignite 112", "Ignite 113"};
+
+
+        try {
+            System.out.println(arr[0]);
+
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Adreste kaydedilecek okul yok.");*/
+        }
+
+

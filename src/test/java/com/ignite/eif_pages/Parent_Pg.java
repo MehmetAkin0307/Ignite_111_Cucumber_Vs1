@@ -1,5 +1,6 @@
 package com.ignite.eif_pages;
 
+import com.github.javafaker.Faker;
 import com.ignite.pojos.Parent;
 import com.ignite.utilities.Driver;
 import org.openqa.selenium.WebElement;
@@ -58,6 +59,9 @@ public class Parent_Pg {
     @FindBy(linkText = "Previous")
     public WebElement previous_Btn;
 
+    @FindBy(xpath = "//*[@id='example-advanced-form-t-1']/span[3]")
+    public WebElement confirmParentStep;
+
 
     public void fillParentForm(Parent parent) {
         System.out.println(parent.toString());
@@ -74,10 +78,19 @@ public class Parent_Pg {
 
         selectFromDropdown(pState, parent.state);
 
-        String zipCode = Integer.toString(parent.zipCode);
+        //String zipCode = Integer.toString(parent.zipCode);
+        String zipCode = Integer.toString(Integer.parseInt(parent.zipCode));
         pZip.sendKeys(zipCode);
         next_Btn.click();
     }
+
+
+    /*@FindBy(xpath = "//fieldset[@id='example-advanced-form-p-1']/section/h3")
+    public WebElement parentAssert;*/
+
+
+
+
 
 
 }

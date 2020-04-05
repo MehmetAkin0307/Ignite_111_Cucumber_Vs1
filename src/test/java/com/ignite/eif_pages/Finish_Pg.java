@@ -29,5 +29,14 @@ public class Finish_Pg {
 
     @FindBy(linkText = "Finish")
     public WebElement finish_Btn;
+    @FindBy (css = "#application-completed-text")
+    public WebElement checkComplete;
+    public String completeText="Your enrollment inquiry has been submitted successfully.";
+
+
+
+    @FindBy(xpath = "//a[@id='example-advanced-form-t-4']/span[3]")
+    public WebElement finishAssert;
 
 }
+

@@ -2,6 +2,7 @@ package com.ignite.step_defs;
 
 import com.ignite.utilities.BrowserUtils;
 import com.ignite.utilities.Driver;
+import com.ignite.utilities.DriverApp;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -20,7 +21,8 @@ public class Hook {
     @Before
     public void setUp() {
         Driver.getDriver().manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-        // Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().manage().window().maximize();
+
     }
 
     @After
@@ -28,10 +30,11 @@ public class Hook {
         if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
+
         }
 
         waitFor(3);
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
 }

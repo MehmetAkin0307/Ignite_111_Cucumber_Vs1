@@ -1,20 +1,16 @@
 package com.ignite.eif_pages;
 
+
 import com.ignite.pojos.Student;
-import com.ignite.utilities.BrowserUtils;
 import com.ignite.utilities.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
-import static com.ignite.utilities.BrowserUtils.selectFromDropdown;
-import static com.ignite.utilities.BrowserUtils.waitFor;
+import java.util.Arrays;
+import java.util.List;
 
 public class Student_Pg {
-
     @FindBy(id = "parentRelation_1")
     public WebElement parentRelation;
 
@@ -46,6 +42,24 @@ public class Student_Pg {
     @FindBy(linkText = "Previous")
     public WebElement previous_Btn;
 
+
+
+    @FindBy(id = "year_1")
+    public WebElement studenAgeYear;
+
+    @FindBy(id = "month_1")
+    public WebElement studentAgeMonth;
+
+    @FindBy(id = "day_1")
+    public WebElement studentAgeDay;
+
+
+
+
+    @FindBy(xpath = "//div[@ id='preview-student1']/div[2]/div/span")
+    public WebElement adSorgulama;
+
+
     public Student_Pg() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -74,4 +88,16 @@ public class Student_Pg {
         next_Btn.click();
     }
 
+    private void selectFromDropdown(WebElement parentRelation, String parentRelation1) {
+    }
+
+    private void waitFor(int i) {
+    }
+
 }
+
+
+
+
+
+

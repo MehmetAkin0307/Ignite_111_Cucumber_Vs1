@@ -11,14 +11,15 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class Driver {
+public class DriverApp {
 
-    private Driver() {
+
+    private DriverApp() {
     }
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriverApp() {
         if (driver == null) {
             switch (ConfigReader.getKey("browser")) {
                 case "chrome":
@@ -76,3 +77,4 @@ public class Driver {
 
     }
 }
+
